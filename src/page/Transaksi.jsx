@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "../stores/useToast";
+import ScanSelector from "../component/ScanSelector";
 
 // Simple Transaksi page
 // Features:
@@ -176,6 +177,7 @@ const Transaksi = () => {
                 </div>
 
                 <div className="bg-white shadow rounded p-3">
+                    <ScanSelector />
                     <div className="mb-4">
                         <div className="text-sm text-gray-500">Subtotal</div>
                         <div className="text-xl font-semibold">Rp{subtotal.toLocaleString("id-ID")}</div>
