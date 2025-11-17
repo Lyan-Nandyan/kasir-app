@@ -1,14 +1,30 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 const Header = () => {
-    const navigate = useNavigate();
+    const navLinkClass = ({ isActive }) =>
+        `px-3 py-2 rounded transition-colors ${isActive ? "bg-blue-600 text-white" : "text-gray-200 hover:bg-gray-700"
+        }`;
+
     return (
-        <header className="bg-gray-800 text-white p-4">
-            <h1 className="text-2xl font-bold">Kasir App</h1>
-            <button onClick={() => navigate("/")}>Kasir</button>
-            <button onClick={() => navigate("/list")}>Daftar Produk</button>
-            <button onClick={() => navigate("/riwayat")}>Riwayat Transaksi</button>
-            <button onClick={() => navigate("/pendapatan")}>Pendapatan</button>
+        <header className="bg-gray-800 text-white">
+            <nav className="flex justify-between items-center px-3 py-4 ">
+                <h1 className="text-xl font-bold">Kasir App</h1>
+                <div className="flex gap-4">
+                    <NavLink to="/" className={navLinkClass} end>
+                        Kasir
+                    </NavLink>
+                    <NavLink to="/list" className={navLinkClass}>
+                        Daftar Produk
+                    </NavLink>
+                    <NavLink to="/riwayat" className={navLinkClass}>
+                        Riwayat Transaksi
+                    </NavLink>
+                    <NavLink to="/pendapatan" className={navLinkClass}>
+                        Pendapatan
+                    </NavLink>
+                </div>
+            </nav>
         </header>
     );
 };
