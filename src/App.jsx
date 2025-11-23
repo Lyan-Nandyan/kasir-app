@@ -12,8 +12,8 @@ import Pendapatan from './page/Pendapatan.jsx';
 import Pengeluaran from './page/Pengeluaran.jsx'; // Import Page Baru
 
 function App() {
-  return (
-    <BrowserRouter>
+   return (
+    <>
       <Header />
       <Routes>
         <Route path="/" element={<Transaksi />} />
@@ -22,12 +22,11 @@ function App() {
         <Route path="/edit/:id" element={<EditProduct />} />
         <Route path="/riwayat" element={<Riwayat />} />
         <Route path="/pendapatan" element={<Pendapatan />} />
-        {/* Route Baru */}
         <Route path="/pengeluaran" element={<Pengeluaran />} />
       </Routes>
       <Toast />
       <Confirm />
-    </BrowserRouter>
+    </>
   )
 }
 
